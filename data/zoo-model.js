@@ -1,15 +1,27 @@
 const knex=require('knex');
 const db = require('./dbConfig');
+const express = require('express')
+
+module.exports = {
+    find,
+    findById,
+    add,
+    remove,
+    update
+  };
+
+
 
 // Select * from zoo;
+
 function find() {
-    return db('zoos');
+    return db('zoos')
 
 }
 
-// Select * from users where id=x;
-function findById(id) {
-    return db('zoos').where({ id }); //can also say ('id', id)
+// Select * from zoos where id=x;
+ function findById(id) {
+    return db('zoos').where({id}); //can also say ('id', id)
 }
 
 // INSERT INTO zoo VALUES ('name');
@@ -29,11 +41,12 @@ function remove(id) {
       .del();
   }
 
-async function execute(){
-    zoos = await find();
-    console.log(zoos);
+
+
+// async function execute(){
+//     zoos = await find();
+//     console.log(zoos);
   
-}
+// }
 
-
-execute();
+// execute();

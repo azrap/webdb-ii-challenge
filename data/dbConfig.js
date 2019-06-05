@@ -3,7 +3,7 @@ const knex = require('knex');
 const configOptions = {
     client: 'sqlite3',
     connection: {
-        filename:"./lambda.db3"
+        filename:"./data/lambda.db3"
     },
     useNullAsDefault:true
 };
